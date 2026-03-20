@@ -1,0 +1,211 @@
+<!DOCTYPE html>
+<html lang="es">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>SubliArt - Catálogo de Regalos en MDF</title>
+    <style>
+        /* ESTILOS GENERALES Y COLORES (Naranja suave y Madera) */
+        :root {
+            --primary: #e67e22; /* Naranja para resaltar */
+            --bg-body: #fdfaf6; /* Fondo beige muy claro */
+            --bg-card: #ffffff; /* Fondo blanco de productos */
+            --text-dark: #3e2723; /* Marrón oscuro para texto */
+            --text-light: #795548; /* Marrón medio para subtítulos */
+            --whatsapp: #25d366; /* Color oficial WhatsApp */
+        }
+
+        body {
+            font-family: 'Segoe UI', 'Roboto', 'Oxygen', 'Ubuntu', 'Cantarell', 'Fira Sans', 'Droid Sans', 'Helvetica Neue', sans-serif;
+            background-color: var(--bg-body);
+            color: var(--text-dark);
+            margin: 0;
+            padding: 20px;
+        }
+
+        /* CABECERA (LOGO Y TÍTULO) */
+        .header {
+            text-align: center;
+            padding: 40px 20px;
+            background: var(--bg-card);
+            border-radius: 15px;
+            box-shadow: 0 4px 15px rgba(0,0,0,0.05);
+            margin-bottom: 30px;
+            border-bottom: 4px solid #d7ccc8; /* Detalle color madera */
+        }
+
+        .header h1 {
+            color: var(--primary);
+            margin: 0;
+            font-size: 2.8em;
+            text-transform: uppercase;
+            letter-spacing: 1px;
+        }
+
+        .header p.subtitle {
+            color: var(--text-light);
+            font-size: 1.2em;
+            margin-top: 10px;
+            font-weight: 300;
+        }
+
+        /* TÍTULOS DE CATEGORÍAS */
+        .category-title {
+            margin: 50px 0 25px 0;
+            padding-left: 15px;
+            border-left: 6px solid var(--primary);
+            color: var(--text-dark);
+            font-size: 1.8em;
+            font-weight: bold;
+        }
+
+        /* GRILLA DE PRODUCTOS */
+        .grid {
+            display: grid;
+            grid-template-columns: repeat(auto-fit, minmax(280px, 1fr));
+            gap: 25px;
+            max-width: 1200px;
+            margin: 0 auto;
+        }
+
+        /* TARJETA DE PRODUCTO */
+        .card {
+            background: var(--bg-card);
+            border-radius: 12px;
+            overflow: hidden;
+            box-shadow: 0 8px 20px rgba(0,0,0,0.1);
+            transition: transform 0.3sease;
+            border: 1px solid #e0e0e0;
+        }
+
+        .card:hover {
+            transform: translateY(-8px);
+        }
+
+        /* IMAGEN DEL PRODUCTO (Aquí pondrás tus fotos) */
+        .card img {
+            width: 100%;
+            height: 250px; /* Altura fija para que todas se vean igual */
+            object-fit: cover; /* Recorta la imagen para llenar el espacio sin deformar */
+            background-color: #f1f1f1; /* Fondo gris mientras carga la imagen */
+            border-bottom: 1px solid #e0e0e0;
+        }
+
+        /* INFORMACIÓN DEL PRODUCTO */
+        .card-info {
+            padding: 20px;
+            text-align: center;
+        }
+
+        .card-info h3 {
+            margin: 0 0 10px 0;
+            font-size: 1.4em;
+            color: var(--text-dark);
+        }
+
+        .card-info p {
+            color: var(--text-light);
+            font-size: 1em;
+            line-height: 1.5;
+            margin-bottom: 15px;
+            height: 45px; /* Altura fija para las descripciones breves */
+            overflow: hidden; /* Corta el texto si es muy largo */
+        }
+
+        /* PRECIO */
+        .price {
+            color: var(--primary);
+            font-weight: bold;
+            font-size: 1.5em;
+            margin-bottom: 20px;
+            display: block;
+        }
+
+        /* BOTÓN DE WHATSAPP */
+        .btn-whatsapp {
+            display: inline-flex;
+            align-items: center;
+            justify-content: center;
+            background-color: var(--whatsapp);
+            color: white;
+            padding: 12px 25px;
+            border-radius: 8px;
+            text-decoration: none;
+            font-weight: bold;
+            font-size: 1em;
+            transition: 0.3s;
+            gap: 10px; /* Espacio para un futuro icono */
+        }
+
+        .btn-whatsapp:hover {
+            background-color: #128c7e;
+        }
+
+        /* PIE DE PÁGINA */
+        footer {
+            text-align: center;
+            margin-top: 60px;
+            padding: 20px;
+            color: var(--text-light);
+            font-size: 0.9em;
+            border-top: 1px solid #e0e0e0;
+        }
+
+        /* RESPONSIVE: Ajustes para pantallas de celulares */
+        @media (max-width: 600px) {
+            .header h1 { font-size: 2em; }
+            .header p.subtitle { font-size: 1em; }
+            .category-title { font-size: 1.5em; margin: 30px 0 15px 0; }
+            .grid { gap: 15px; padding: 0 10px; }
+            .card-info h3 { font-size: 1.2em; }
+        }
+    </style>
+</head>
+<body>
+
+<div class="header">
+    <h1>SubliArt</h1>
+    <p class="subtitle">✨ Regalos Personalizados en MDF - Por mayor y menor ✨</p>
+</div>
+
+<div class="container">
+    <h2 class="category-title">Regalos Personalizados en MDF</h2>
+    
+    <div class="grid">
+        <div class="card">
+            <img src="https://via.placeholder.com/400x300?text=Rompecabezas+MDF+SubliArt" alt="Rompecabezas MDF personalizado con foto">
+            <div class="card-info">
+                <h3>Rompecabezas de Fotos</h3>
+                <p>MDF de 3mm con acabado brillante. Perfecto para cumpleaños.</p>
+                <span class="price">$12.50</span>
+                <a href="https://wa.me/TU_NUMERO_AQUI?text=Hola SubliArt, me interesa el rompecabezas de fotos en MDF." class="btn-whatsapp">Pedir por WhatsApp</a>
+            </div>
+        </div>
+
+        <div class="card">
+            <img src="https://via.placeholder.com/400x300?text=Llaveros+MDF+Grabados" alt="Llaveros de MDF grabados a láser">
+            <div class="card-info">
+                <h3>Llaveros Grabados Láser</h3>
+                <p>Diferentes formas. Ideales para recuerdos de eventos (por mayor).</p>
+                <span class="price">$1.50 c/u</span>
+                <a href="https://wa.me/TU_NUMERO_AQUI?text=Hola SubliArt, precio por mayor de llaveros grabados." class="btn-whatsapp">Pedir por WhatsApp</a>
+            </div>
+        </div>
+
+        <div class="card">
+            <img src="https://via.placeholder.com/400x300?text=Portarretrato+MDF+Diseño" alt="Portarretrato de MDF personalizado">
+            <div class="card-info">
+                <h3>Portarretrato con Diseño</h3>
+                <p>Personalízalo con tu frase favorita y una foto especial.</p>
+                <span class="price">$18.00</span>
+                <a href="https://wa.me/TU_NUMERO_AQUI?text=Hola SubliArt, cotización de un portarretrato personalizado." class="btn-whatsapp">Pedir por WhatsApp</a>
+            </div>
+        </div>
+        
+    </div> </div> <footer>
+    <p>© 2024 SubliArt - Pillaro, Tungurahua | Envíos a todo el Ecuador 🇪🇨</p>
+    <p>Hecho con creatividad y tecnología.</p>
+</footer>
+
+</body>
+</html>
